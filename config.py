@@ -1,7 +1,7 @@
 from pathlib import Path
 
 TRADE_DIR = Path(
-    r"D:\code\PycharmProjects\redd\backtest"
+    r"D:\code\PycharmProjects\red\backtest"
 )
 
 DATA_DIR = Path(
@@ -9,7 +9,7 @@ DATA_DIR = Path(
 )
 
 RESULT_DIR = Path(
-    r"D:\code\PycharmProjects\redd\result"
+    r"D:\code\PycharmProjects\red\result"
 )
 
 RESULT_DIR.mkdir(
