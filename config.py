@@ -12,6 +12,10 @@ RESULT_DIR = Path(
     r"D:\code\PycharmProjects\red\result"
 )
 
+TRADING_DATA_DIR = Path(
+    r"D:\qdata\stock-trading-data"
+)
+
 RESULT_DIR.mkdir(
     parents=True,
     exist_ok=True
@@ -46,6 +50,8 @@ BREAKOUT_PCT = 7
 # 回撤卖出比例
 DRAWDOWN_RATIO = 0.05
 
+# MA5跌破比例
+MA5_BREAK_RATIO = 0.97
 # 强势股止盈比例
 # 0.05 = 5%
 # 0.08 = 8%

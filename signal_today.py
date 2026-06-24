@@ -1,5 +1,5 @@
 import pandas as pd
-
+from utils import *
 pd.set_option("display.max_columns", None)
 pd.set_option("display.max_rows", None)
 pd.set_option("display.width", None)
@@ -230,20 +230,22 @@ def get_stock_signals(
     )
 
 
-if __name__ == "__main__":
 
+if __name__ == "__main__":
+    full_code, stock_name = (
+        get_full_code_and_name(
+            "688548"
+        )
+    )
+
+    print(full_code)
+    print(stock_name)
     positions = [
 
         (
             "SZ002068",
             "黑猫股份",
             12.65,
-        ),
-
-        (
-            "SZ001359",
-            "平安电工",
-            117.3,
         ),
 
     ]
