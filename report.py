@@ -183,6 +183,16 @@ def save_all_results(
         ignore_index=True,
     )
 
+    # 不同月份重复信号去重
+
+    all_df = all_df.drop_duplicates(
+        subset=[
+            "股票代码",
+            "开仓日期",
+        ],
+        keep="first",
+    )
+
     all_df.to_excel(
         result_dir / "全部明细.xlsx",
         index=False,

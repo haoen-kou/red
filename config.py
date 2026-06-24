@@ -50,8 +50,16 @@ BREAKOUT_PCT = 7
 # 回撤卖出比例
 DRAWDOWN_RATIO = 0.05
 
-# MA5跌破比例
-MA5_BREAK_RATIO = 0.97
+# 趋势股动态回撤
+
+# 盈利20%以内
+DRAWDOWN_RATIO_LOW = 0.10
+
+# 盈利20%-50%
+DRAWDOWN_RATIO_MID = 0.08
+
+# 盈利50%以上
+DRAWDOWN_RATIO_HIGH = 0.05
 # 强势股止盈比例
 # 0.05 = 5%
 # 0.08 = 8%
