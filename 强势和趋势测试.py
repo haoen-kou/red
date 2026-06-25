@@ -299,20 +299,72 @@ def get_pattern_signal(
             result["recent_return"],
     }
 
+def get_pattern_signals(
+    positions,
+):
+
+    results = []
+
+    for item in positions:
+
+        # 可以只传代码
+        if len(item) == 1:
+
+            code = item[0]
+
+            trade_date = None
+
+        # 传代码+日期
+        else:
+
+            code = item[0]
+
+            trade_date = item[1]
+
+        result = get_pattern_signal(
+            code,
+            trade_date,
+        )
+
+        results.append(
+            result
+        )
+
+    return pd.DataFrame(
+        results
+    )
+
 
 if __name__ == "__main__":
 
-    result = get_pattern_signal(
-        "002498",
-        "2026-01-22"
+    positions = [
+
+        # (
+        #     "002498",
+        #     "2026-01-22",
+        # ),
+
+        (
+            "001359",
+            "2026-06-24",
+        ),
+
+        (
+            "603260",
+        ),      # 不写日期，默认最新
+
+        (
+            "002631",
+        ),
+
+    ]
+
+    result_df = get_pattern_signals(
+        positions
     )
 
     print()
 
-    for k, v in result.items():
-
-        print(
-            f"{k}: {v}"
-        )
+    print(result_df)
 
     print()
