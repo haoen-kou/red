@@ -1,7 +1,7 @@
 import pandas as pd
 
 from config import *
-from strategy import should_sell
+from 策略.strategy import should_sell
 
 from config import ENABLE_TREND_FILTER
 # ==========================================
