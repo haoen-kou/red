@@ -32,7 +32,7 @@ else:
 
 TRADE_DIR = (
     ROOT_DIR
-    / "backtest"
+    / "data"
 )
 
 RESULT_DIR = (

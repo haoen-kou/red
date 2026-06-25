@@ -1,9 +1,7 @@
 import numpy as np
 import pandas as pd
 
-from backtest import load_stock_data
-from utils import get_full_code_and_name
-
+from utils import load_stock_data, get_full_code_and_name
 
 def judge_with_5min(
     df_5min,

@@ -1,7 +1,56 @@
 from config import TRADING_DATA_DIR
 import pandas as pd
+from config import *
 stock_name_cache = {}
+# ==========================================
+# 股票数据缓存
+# ==========================================
 
+stock_cache = {}
+# ==========================================
+# 读取股票数据
+# ==========================================
+
+def load_stock_data(code):
+
+    if code in stock_cache:
+        return stock_cache[code]
+
+    csv_file = DATA_DIR / f"{code.lower()}.csv"
+
+    if not csv_file.exists():
+        return None
+
+    try:
+
+        df = pd.read_csv(
+            csv_file,
+            encoding="gb18030",
+            skiprows=1,
+        )
+
+        df.columns = (
+            df.columns
+            .astype(str)
+            .str.strip()
+        )
+
+        if "交易日期" not in df.columns:
+            return None
+
+        df["交易日期"] = pd.to_datetime(
+            df["交易日期"]
+        ).dt.strftime("%Y-%m-%d")
+
+        stock_cache[code] = df
+
+        return df
+
+    except Exception as e:
+
+        print(code, e)
+
+        return None
 
 def get_stock_name(
     full_code,
