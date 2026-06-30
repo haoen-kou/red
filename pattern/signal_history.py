@@ -145,7 +145,7 @@ if __name__ == "__main__":
 
     full_code, stock_name = (
         get_full_code_and_name(
-            "002631"
+            "301132"
         )
     )
     positions = [
@@ -154,7 +154,7 @@ if __name__ == "__main__":
             full_code,
             stock_name,
             125,
-            "2026-06-23",
+            "2026-06-25",
         ),
 
         (
